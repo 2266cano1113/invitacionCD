@@ -1,0 +1,383 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Ms+Madi&family=Raleway:wght@300;400;700&display=swap');
+
+#id {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.App {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Raleway', sans-serif;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.clearfix {
+  overflow: auto;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-image: url('../src/assets/img/ejemplo.jpg');
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+
+  & .problema {
+    width: 100%;
+    height: 100vh;
+    -webkit-backdrop-filter: blur(15px);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .mensaje {
+      background-color: rgba(240, 248, 255, 0.379);
+      width: 80%;
+      height: 300px;
+      border-radius: 1rem;
+      padding: 1rem;
+      overflow: hidden;
+      text-transform: uppercase;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+      & .text{
+        -webkit-backdrop-filter: blur(0px);
+        backdrop-filter: blur(0px);
+      }
+      & p{
+        font-size: 1.7rem;
+      }
+      & a {
+        color: rgb(7, 7, 81);
+        text-decoration: none;
+        font-size: 2rem;
+      }
+    }
+  }
+
+  & .sobreP {
+    background-image: url(../src/assets/img/sobre.png);
+    width: 100%;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-backdrop-filter: blur(0px);
+    backdrop-filter: blur(0px);
+    background-size: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .5s all;
+    opacity: 0;
+
+    & .informacion {
+      width: 580px;
+      height: 370px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      cursor: pointer;
+
+
+      // background-color: rgba(123, 34, 34, 0.533);
+      @media (max-width: 768px) {
+        width: 75%;
+        height: 20rem;
+      }
+
+      @media (max-width: 600px) {
+        width: 75%;
+        height: 15rem;
+      }
+
+      & p {
+        display: flex;
+        flex-direction: column;
+        color: rgb(14, 29, 60);
+        padding-right: 1rem;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.384);
+
+        & .familia {
+          display: block;
+          font-size: 1.7rem;
+          font-family: 'Dancing Script', cursive;
+          color: rgb(0, 54, 161);
+          padding-bottom: .5rem;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      background-size: 90%;
+    }
+  }
+
+  & .sobre {
+    background-image: url(../src/assets/img/sobre.png);
+    width: 100%;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-backdrop-filter: blur(70px);
+    backdrop-filter: blur(70px);
+    background-size: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .informacion {
+      width: 580px;
+      height: 370px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      cursor: pointer;
+
+      // background-color: rgba(123, 34, 34, 0.533);
+      @media (max-width: 768px) {
+        width: 75%;
+        height: 20rem;
+      }
+
+      @media (max-width: 600px) {
+        width: 75%;
+        height: 15rem;
+      }
+
+      & p {
+        display: flex;
+        flex-direction: column;
+        color: rgb(14, 29, 60);
+        padding-right: 1rem;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.384);
+
+        & .familia {
+          display: block;
+          font-size: 1.7rem;
+          font-family: 'Dancing Script', cursive;
+          color: rgb(0, 54, 161);
+          text-align: end;
+          padding-bottom: .5rem;
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+      background-size: 90%;
+    }
+  }
+}
+
+// ----------------aqui empieza la invitacion -------------- 
+
+.header {
+  width: 100%;
+  height: 100vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.168)), url(../src/assets/img/ejemplo.jpg);
+
+  & h1 {
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    margin: 0;
+    padding: 0;
+    color: white;
+    display: block;
+    width: 100%;
+    font-weight: 300;
+    text-shadow: 0 0 10px black;
+  }
+
+  & h2 {
+    font-family: 'Ms Madi', cursive;
+    font-size: 4rem;
+    margin: 5rem 0;
+    padding: 0;
+    color: white;
+    display: block;
+    width: 100%;
+    text-shadow: 0 0 10px black;
+  }
+
+  & button {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    cursor: pointer;
+    background-color: rgb(255, 199, 208);
+    border: none;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100% 0 0 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  & .fecha {
+    width: 100%;
+    position: absolute;
+    bottom: 2rem;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+
+    @media (min-width: 768px) {
+      bottom: 8rem;
+    }
+  }
+
+  & .odometer-block {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: 0 0 10px black;
+
+    & span {
+      width: 20%;
+    }
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1000px) {
+      width: 30%;
+    }
+  }
+
+  & .fechaTxt {
+    color: white;
+    text-shadow: 0 0 10px black;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1000px) {
+      width: 30%;
+    }
+
+    & span {
+      width: 20%;
+    }
+  }
+}
+
+.animationPink {
+  -webkit-animation: color-change 1s infinite;
+  -moz-animation: color-change 1s infinite;
+  -o-animation: color-change 1s infinite;
+  -ms-animation: color-change 1s infinite;
+  animation: color-change 1s infinite;
+  animation-direction: alternate;
+  margin: 0 .5rem;
+  animation-delay: 0;
+  color: rgba(248, 178, 0, 0.581);
+  width: 50% !important;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+}
+
+.invitado {
+  min-height: 50vh;
+  width: 100vw;
+  padding: 1rem;
+  background-color: antiquewhite;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  h2 {
+    font-family: 'Ms Madi', cursive;
+    font-size: 2rem;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    color: rgb(255, 255, 255);
+    transform: rotate(-10deg);
+  }
+
+  25% {
+    color: rgb(236, 144, 201);
+    transform: rotate(0deg);
+  }
+
+  50% {
+    color: rgb(255, 255, 255);
+    transform: rotate(10deg);
+  }
+
+  75% {
+    color: rgb(236, 144, 201);
+    transform: rotate(0deg);
+  }
+
+  100% {
+    color: rgb(255, 255, 255);
+    transform: srotate(-10deg);
+  }
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
