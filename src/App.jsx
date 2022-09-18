@@ -68,10 +68,10 @@ function App() {
   }]
   useEffect(() => {
 
-    console.log('esto es el link: ' + pathname.slice(1, pathname.length))
-    invitado.codigo !== pathname.slice(1, pathname.length) ? (
+    console.log('esto es el link: ' + pathname.slice(14, pathname.length))
+    invitado.codigo !== pathname.slice(14, pathname.length) ? (
       invitados.map((index) => (
-        pathname.slice(1, pathname.length) === index.codigo ? (
+        pathname.slice(14, pathname.length) === index.codigo ? (
           setInvitado(index),
           setPermiso(true)
           ) : (null),
