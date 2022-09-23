@@ -1,4 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600&family=Ms+Madi&family=Raleway:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Dancing+Script:wght@400;600&family=Ms+Madi&family=Raleway:wght@300;400;700&display=swap');
+
+$primary: rgb(37, 40, 52);
+$rojo: rgb(255, 0, 0);
+$azulRey: rgb(62 63 160);
 
 #id {
   width: 100vw;
@@ -10,7 +14,12 @@
   padding: 0;
   margin: 0;
   overflow-x: hidden;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Ms Madi', cursive;
+  background-color: $primary;
+  color: #ffffff;
+  font-size: 2rem;
+  text-align: center;
+  scroll-behavior: smooth;
 }
 
 .clearfix::after {
@@ -53,13 +62,15 @@
       text-align: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
-      & .text{
+      & .text {
         -webkit-backdrop-filter: blur(0px);
         backdrop-filter: blur(0px);
       }
-      & p{
+
+      & p {
         font-size: 1.7rem;
       }
+
       & a {
         color: rgb(7, 7, 81);
         text-decoration: none;
@@ -150,12 +161,17 @@
 
       // background-color: rgba(123, 34, 34, 0.533);
       @media (max-width: 768px) {
-        width: 75%;
+        width: 85%;
         height: 20rem;
       }
 
       @media (max-width: 600px) {
-        width: 75%;
+        width: 85%;
+        height: 17rem;
+      }
+
+      @media (max-width: 500px) {
+        width: 85%;
         height: 15rem;
       }
 
@@ -163,6 +179,7 @@
         display: flex;
         flex-direction: column;
         color: rgb(14, 29, 60);
+        font-size: 1.5rem;
         padding-right: 1rem;
         text-shadow: 0 0 5px rgba(0, 0, 0, 0.384);
 
@@ -178,7 +195,7 @@
     }
 
     @media (max-width: 768px) {
-      background-size: 90%;
+      background-size: 100%;
     }
   }
 }
@@ -187,7 +204,7 @@
 
 .header {
   width: 100%;
-  height: 100vh;
+  height: 95vh;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -197,12 +214,14 @@
   align-items: center;
   text-align: center;
   position: relative;
-  background-image: radial-gradient(transparent, rgba(0, 0, 0, 0.168)), url(../src/assets/img/ejemplo.jpg);
+  background-image: linear-gradient(transparent, transparent, $primary),
+    linear-gradient(transparent, transparent, transparent, $primary),
+    linear-gradient(transparent, transparent, transparent, transparent, $primary),
+    url(../src/assets/img/ejemplo.jpg);
 
   & h1 {
-    font-family: 'Raleway', sans-serif;
     font-family: 'Dancing Script', cursive;
-    font-size: 4.5rem;
+    font-size: 4rem;
     margin: 0;
     padding: 0;
     color: white;
@@ -222,89 +241,53 @@
     width: 100%;
     text-shadow: 0 0 10px black;
   }
-
   & button {
     position: fixed;
     top: 30%;
     right: 0;
     cursor: pointer;
-    background-color: rgb(255, 199, 208);
+    background-image: linear-gradient(-45deg, $primary, $azulRey, $primary);
     border: none;
     width: 2.5rem;
     height: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: .3s;
     border-radius: 100% 0 0 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 999;
   }
 
-  & .fecha {
+  .dia {
     width: 100%;
     position: absolute;
-    bottom: 2rem;
-    font-size: 1.5rem;
-    font-family: 'Dancing Script', cursive;
+    bottom: 0;
 
-    @media (min-width: 768px) {
-      bottom: 8rem;
-    }
-  }
-
-  & .odometer-block {
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: space-around;
-    margin-top: 2rem;
-    font-size: 1.5rem;
-    color: white;
-    text-shadow: 0 0 10px black;
-
-    & span {
-      width: 20%;
+    p {
+      color: white;
+      font-size: 2rem;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      margin: 0;
     }
 
-    @media (min-width: 768px) {
-      width: 50%;
-    }
-
-    @media (min-width: 1000px) {
-      width: 30%;
-    }
-  }
-
-  & .fechaTxt {
-    color: white;
-    text-shadow: 0 0 10px black;
-    display: flex;
-    width: 100%;
-    margin: 0 auto;
-
-    @media (min-width: 768px) {
-      width: 50%;
-    }
-
-    @media (min-width: 1000px) {
-      width: 30%;
-    }
-
-    & span {
-      width: 20%;
+    img {
+      margin-top: 2rem;
+      height: 10rem;
     }
   }
 }
 
 .animationPink {
-  -webkit-animation: color-change 1s infinite;
-  -moz-animation: color-change 1s infinite;
-  -o-animation: color-change 1s infinite;
-  -ms-animation: color-change 1s infinite;
-  animation: color-change 1s infinite;
+  -webkit-animation: color-change .7s infinite;
+  -moz-animation: color-change .7s infinite;
+  -o-animation: color-change .7s infinite;
+  -ms-animation: color-change .7s infinite;
+  animation: color-change .7s infinite;
   animation-direction: alternate;
-  margin: 0 .5rem;
+  margin: 0 1rem;
   animation-delay: 0;
-  color: rgba(248, 178, 0, 0.581);
+  color: rgba(255, 255, 255, 0.581);
   width: 50% !important;
 }
 
@@ -315,56 +298,237 @@ main {
 }
 
 .invitado {
+  margin-top: 1rem;
   min-height: 50vh;
   width: 100vw;
-  padding: 1rem;
-  background-color: antiquewhite;
+  padding: 1rem 1rem 1rem 0;
+  text-align: center;
+  font-family: 'Courgette', cursive;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+  align-items: center;
 
   p {
+    width: 100%;
     margin: 0;
-    padding: 0;
+    padding: 0 1rem;
+    font-size: 1.8rem;
+    line-height: 1;
+    box-sizing: border-box;
+
+    span {
+      color: $rojo;
+      font-size: 2.5rem;
+    }
   }
 
   h2 {
-    font-family: 'Ms Madi', cursive;
     font-size: 2rem;
+    margin: 0;
+  }
+  .padres {
+    p{
+      letter-spacing: 2px;
+      font-family: 'Dancing Script', cursive;
+    }
+  }
+}
+
+.adorno {
+  margin-top: .5rem;
+  width: 50%;
+  // filter: drop-shadow(0 0 3px rgba(170, 255, 185, 0.5));
+}
+
+section.faltan {
+  width: 100%;
+  margin-top: 4rem;
+  // min-height: 28vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  p {
+    color: white;
+    margin: 0 .5rem;
+  }
+
+  .fecha {
+    width: 100%;
+    // position: absolute;
+    bottom: 3rem;
+    font-size: 1.5rem;
+    font-family: 'Dancing Script', cursive;
+
+    @media (min-width: 768px) {
+      bottom: 8rem;
+    }
+  }
+
+  .odometer-block {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: space-around;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: $rojo;
+    text-shadow: 0 0 10px black;
+
+    & span {
+      width: 20%;
+    }
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1000px) {
+      width: 30%;
+    }
+  }
+
+  .fechaTxt {
+    color: white;
+    text-shadow: 0 0 10px black;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      width: 50%;
+    }
+
+    @media (min-width: 1000px) {
+      width: 30%;
+    }
+
+    & span {
+      width: 20%;
+    }
+  }
+}
+
+.lugar {
+  margin-top: 7rem;
+
+  p {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 3rem;
+    }
+  }
+}
+
+.civil {
+  width: 90%;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  padding: .5rem;
+  box-sizing: border-box;
+  border-radius: 7px;
+  color: $primary;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  iframe {
+    width: 95%;
+    min-height: 30vh;
+    border: none;
+    border-radius: 7px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  p {
+    margin-bottom: 0;
+    display: flex;
+    text-align: start;
+    font-size: 1.2rem;
+    width: 80%;
+    // background-image: linear-gradient(90deg, transparent, rgba(232, 232, 232, 0.5), transparent);
+    justify-content: start;
+    font-family: 'Raleway', sans-serif;
+
+    svg {
+      width: 10%;
+    }
+
+    span {
+      padding-left: 1rem;
+      text-align: start;
+      width: 100%;
+    }
+  }
+  a {
+    width: 92%;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    font-family: 'Raleway', sans-serif;
+    background-image: linear-gradient(45deg, $primary, $azulRey, $primary);
+    color: #ffffff;
+    text-decoration: none;
+    padding: .5rem;
+    border-radius: 7px;
+    &:visited{
+      color: #ffffff;
+    }
   }
 }
 
 @keyframes color-change {
   0% {
     color: rgb(255, 255, 255);
-    transform: rotate(-10deg);
+    transition: .2s;
   }
 
-  25% {
+  20% {
     color: rgb(236, 144, 201);
-    transform: rotate(0deg);
+    transition: .2s;
   }
 
-  50% {
+  40% {
     color: rgb(255, 255, 255);
-    transform: rotate(10deg);
+    transition: .2s;
   }
 
-  75% {
+  60% {
     color: rgb(236, 144, 201);
-    transform: rotate(0deg);
+    transition: .2s;
+  }
+
+  80% {
+    color: rgb(255, 255, 255);
+    transition: .2s;
   }
 
   100% {
-    color: rgb(255, 255, 255);
-    transform: srotate(-10deg);
+    color: rgb(236, 144, 201);
+    transition: .2s;
   }
 }
 
-@keyframes logo-spin {
+@keyframes color-change {
   from {
-    transform: rotate(0deg);
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 
   to {
-    transform: rotate(360deg);
+    color: rgb(255, 0, 0);
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   }
 }
 
